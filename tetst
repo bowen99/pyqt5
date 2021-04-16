@@ -1,0 +1,62 @@
+    def bt1(self):
+        self.box = QMessageBox(QMessageBox.Question, '退出', '确定退出？')
+        yes = self.box.addButton('确定', QMessageBox.YesRole)
+        no = self.box.addButton('取消', QMessageBox.NoRole)
+        self.box.show()
+        if self.box.clickedButton() == yes:
+
+        else:
+            print('不退出')
+
+
+    def bt1(self):
+        app = Application().start(r"C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
+        # pyperclip.copy("C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
+        app=Application().connect(path="C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
+        send_keys('^f')
+        pyperclip.copy('汪狗')
+        send_keys('^v')
+        time.sleep(1)
+        pyautogui.hotkey('shift','enter')
+
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.pushButton.setText(_translate("MainWindow", "微信"))
+        self.pushButton_2.setText(_translate("MainWindow", "确定"))
+        self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "请输入你要发送的内容"))
+        self.label.setText(_translate("MainWindow", "发送给:"))
+    def people(self):
+        app = Application().start(r"C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
+        # pyperclip.copy("C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
+        app = Application().connect(path="C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
+        send_keys('^f')
+        pyperclip.copy(self.lineEdit.text())
+        send_keys('^v')
+        time.sleep(1)
+        pyautogui.press('enter')
+        time.sleep(1)
+        while True:
+            pyperclip.copy(self.lineEdit_2.text())
+            send_keys('^v')
+            pyautogui.press('enter')
+            print("开始轰炸！！！！")
+
+if __name__ == '__main__':
+    import sys
+    import time
+    import pyautogui
+    import pyperclip
+    from PyQt5 import QtCore, QtGui, QtWidgets
+    from PyQt5.QtWidgets import QApplication, QMainWindow
+    from pyautogui import hotkey
+    from pywinauto import Application
+    from pywinauto.keyboard import send_keys
+    # import pics_ui_rc # 导入添加的资源（根据实际情况填写文件名）
+    app = QApplication(sys.argv)
+    MainWindow = QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
