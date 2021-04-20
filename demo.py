@@ -1,16 +1,15 @@
-from pywinauto.keyboard import send_keys
-from pywinauto import Application
-from datetime import datetime
-import time
-import pyautogui
-import pyperclip
-import os
+import sys
+from PyQt5.QtWidgets import QWidget, QMessageBox, QApplication
 
-app = Application().start(r"C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
-        # pyperclip.copy("C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
-app = Application().connect(path=r"C:\Program Files (x86)\Tencent\WeChat\WeChat.exe")
 
-# send_keys('^f')
-# pyperclip.copy('汪狗')
-# send_keys('^v')
-# send_keys('~')
+class Example(QWidget):
+
+    def __init__(self):
+        super().__init__()
+
+        self.initUI()
+
+    def initUI(self):
+        self.setGeometry(300, 300, 250, 150)
+        self.setWindowTitle('Message box')
+        self.show()

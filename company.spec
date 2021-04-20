@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['Wechat.pyw'],
+a = Analysis(['company.pyw'],
              pathex=['E:\\Pyqt5'],
              binaries=[],
              datas=[],
@@ -21,7 +21,7 @@ exe = EXE(pyz,
           a.scripts,
           [],
           exclude_binaries=True,
-          name='Wechat',
+          name='company',
           debug=False,
           bootloader_ignore_signals=False,
           strip=False,
@@ -34,4 +34,4 @@ coll = COLLECT(exe,
                strip=False,
                upx=True,
                upx_exclude=[],
-               name='Wechat')
+               name='company')
